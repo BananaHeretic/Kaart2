@@ -1,0 +1,78 @@
+﻿<Page
+    x:Class="Kaart2.Page3"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Kaart2"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <local:Settings x:Key="Settings"></local:Settings>
+    </Page.Resources>
+    <Grid>
+        <Pivot Title="Pivot">
+            <PivotItem Header="Kohad">
+                <Grid>
+
+                    <ListView x:Name="list" Margin="5,5"  SelectionChanged="Selectionchanged_Eventhandler_of_Listbox"  >
+                        <ListView.Resources>
+                            <DataTemplate x:Key="myCell">
+                                <Border BorderBrush="Gray"  BorderThickness="0,0,0,1" >
+                                    <Grid Margin="5">
+                                        <StackPanel>
+                                            <TextBlock x:Name="Id"  Visibility="Collapsed" Text="{Binding Id}"/>
+                                            <TextBlock Text="Nimi" Style="{StaticResource SubheaderTextBlockStyle}"/>
+                                            <TextBlock x:Name="nimi"  Style="{StaticResource ListViewItemSubheaderTextBlockStyle}" FontSize="16"  Margin="0,0,10,0" TextWrapping="Wrap"  Text="{Binding Nimi}" Width="auto"/>
+
+                                            <TextBlock Text="Latitude" Style="{StaticResource SubheaderTextBlockStyle}"/>
+                                            <TextBlock x:Name="ver"  Style="{StaticResource ListViewItemSubheaderTextBlockStyle}"  FontSize="16" Text="{Binding Ver}" />
+
+                                            <TextBlock Text="Longitude" Style="{StaticResource SubheaderTextBlockStyle}"/>
+                                            <TextBlock x:Name="hor"  Style="{StaticResource ListViewItemSubheaderTextBlockStyle}" FontSize="16" Margin="0,0,10,0" TextWrapping="Wrap"  Text="{Binding Hor}" Width="auto"  />
+
+                                            <TextBlock Text="Note" Style="{StaticResource SubheaderTextBlockStyle}"/>
+                                            <TextBlock x:Name="text"  Style="{StaticResource ListViewItemSubheaderTextBlockStyle}" FontSize="16" Margin="0,0,10,0" Text="{Binding Text}" />
+
+                                            <TextBlock Text="Aeg" Style="{StaticResource SubheaderTextBlockStyle}"/>
+                                            <TextBlock Margin="0,0,0,30" x:Name="datetime"  Style="{StaticResource ListViewItemSubheaderTextBlockStyle}" FontSize="16"   Text="{Binding CreationDate}" />
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                            </DataTemplate>
+
+                        </ListView.Resources>
+
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                            </Style>
+                        </ListView.ItemContainerStyle>
+
+                        <ListView.ItemTemplate>
+                            <StaticResource ResourceKey="myCell"/>
+                        </ListView.ItemTemplate>
+
+                    </ListView>
+                </Grid>
+            </PivotItem>
+            <PivotItem Header="Seaded">
+                <StackPanel>
+                    <CheckBox Content="CheckBox Setting" Height="Auto" HorizontalAlignment="Left" Margin="60,20,0,0" Name="checkBoxSetting" VerticalAlignment="Top"
+                              IsChecked="{Binding Source = {StaticResource Settings}, Path= CheckBoxSetting, Mode=TwoWay}"/>
+                    <TextBox x:Name="usernameSettings" Text="{Binding Source= {StaticResource Settings}, Path=UsernameSetting, Mode=TwoWay}"></TextBox>
+                </StackPanel>
+            </PivotItem>
+            <PivotItem Header="Matsi Majandus">
+                <StackPanel>
+                    <TextBlock FontFamily="Comic Sans MS" FontSize="24" TextWrapping="Wrap"> Eile südaööl leite Madise tiigist kott kartuleid <LineBreak/>Müün <Run Text="50" Foreground="Green"/> senti tükk, kui <Run Text="15" Foreground="Green"/> ostad annan kauba peal <Underline> <Run FontWeight="Bold" Foreground="Yellow" FontStyle="Italic" Text="juustu Cheetoseid"/> </Underline></TextBlock>
+                    <Image Source="Assets/Potato_face.jpg"/>
+                    <TextBlock FontSize="24">Pilt kartulist.</TextBlock>
+                </StackPanel>
+            </PivotItem>
+        </Pivot>
+        <AppBarButton HorizontalAlignment="Right" Icon="Map"  Margin="0,0, 83,0" VerticalAlignment="Top"/>
+        <AppBarButton HorizontalAlignment="Right" Icon="Remove"  Margin="0,0,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Page>
