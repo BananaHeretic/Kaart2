@@ -67,7 +67,7 @@
                 <StackPanel>
                     <TextBlock FontFamily="Comic Sans MS" FontSize="24" TextWrapping="Wrap"> Eile südaööl leite Madise tiigist kott kartuleid <LineBreak/>Müün <Run Text="50" Foreground="Green"/> senti tükk, kui <Run Text="15" Foreground="Green"/> ostad annan kauba peal <Underline> <Run FontWeight="Bold" Foreground="Yellow" FontStyle="Italic" Text="juustu Cheetoseid"/> </Underline></TextBlock>
                     <Image Source="Assets/Potato_face.jpg"/>
-                    <TextBlock FontSize="24">Pilt kartulist.</TextBlock>
+                    <TextBlock FontSize="24">Pilt kartulist</TextBlock>
                 </StackPanel>
             </PivotItem>
         </Pivot>
