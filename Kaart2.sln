@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kaart2", "Kaart2\Kaart2.csproj", "{14868074-1094-4EAE-831F-695A1DE836B0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kaart2", "Kaart2.csproj", "{14868074-1094-4EAE-831F-695A1DE836B0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
